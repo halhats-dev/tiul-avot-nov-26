@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>טיול אבות וילדים · חלח״צ</title>
+<meta name="description" content="כל הפרטים על טיול האבות והילדים של חיבת ציון / חרב לאת – מדבר, חאן מצדה, זריחה וים המלח. ולמקרה הצורך: פרוטוקול חילוץ.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&family=Secular+One&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbf5ea;
+    --surface: #ffffff;
+    --surface-2: #f4e8d3;
+    --ink: #2b2118;
+    --ink-soft: #6b5a48;
+    --line: #e6d6bb;
+    --accent: #d9622b;
+    --accent-ink: #ffffff;
+    --accent-soft: #fbe2d3;
+    --sky: #2f4a7a;
+    --ok: #3f8a5a;
+    --ok-soft: #dcefe2;
+    --warn: #b4441c;
+    --shadow: 0 6px 24px rgba(80, 50, 20, .08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17130f;
+      --surface: #221c16;
+      --surface-2: #2c241c;
+      --ink: #f4ebdd;
+      --ink-soft: #bba88f;
+      --line: #3b3127;
+      --accent: #f07c45;
+      --accent-ink: #1a120c;
+      --accent-soft: #3d2518;
+      --sky: #8fa9da;
+      --ok: #6cc08a;
+      --ok-soft: #1e3326;
+      --warn: #ff9a6b;
+      --shadow: 0 6px 24px rgba(0, 0, 0, .35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17130f;
+    --surface: #221c16;
+    --surface-2: #2c241c;
+    --ink: #f4ebdd;
+    --ink-soft: #bba88f;
+    --line: #3b3127;
+    --accent: #f07c45;
+    --accent-ink: #1a120c;
+    --accent-soft: #3d2518;
+    --sky: #8fa9da;
+    --ok: #6cc08a;
+    --ok-soft: #1e3326;
+    --warn: #ff9a6b;
+    --shadow: 0 6px 24px rgba(0, 0, 0, .35);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Rubik", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: "Secular One", "Rubik", sans-serif; font-weight: 400; line-height: 1.2; margin: 0; }
+  a { color: var(--accent); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+  section { padding: 56px 0 8px; }
+  .kicker { color: var(--accent); font-weight: 700; font-size: 14px; letter-spacing: .02em; margin-bottom: 6px; }
+  h2 { font-size: clamp(28px, 5vw, 38px); margin-bottom: 14px; }
+  .lead { color: var(--ink-soft); margin: 0 0 22px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 22px; box-shadow: var(--shadow); }
+
+  /* Sticky nav */
+  .nav { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav .wrap { display: flex; align-items: center; gap: 12px; height: 56px; }
+  .nav .brand { font-family: "Secular One", sans-serif; font-size: 18px; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; flex: 1; }
+  .nav ul::-webkit-scrollbar { display: none; }
+  .nav a.l { display: block; white-space: nowrap; text-decoration: none; color: var(--ink-soft); font-weight: 500; font-size: 15px; padding: 6px 12px; border-radius: 999px; }
+  .nav a.l:hover { color: var(--ink); background: var(--surface-2); }
+  .nav a.l.active { color: var(--ink); background: var(--surface-2); }
+  .nav a.sos { flex: none; background: var(--accent); color: var(--accent-ink); font-weight: 700; }
+  .nav a.sos:hover, .nav a.sos.active { background: var(--accent); color: var(--accent-ink); filter: brightness(1.08); }
+  section, .hero { scroll-margin-top: 64px; }
+  @media (max-width: 560px) { .nav .brand { display: none; } }
+
+  /* Hero */
+  .hero {
+    position: relative; overflow: hidden;
+    --photo-w: max(100vw, 700px);
+    --photo-h: max(55.8vw, 391px); /* photo is 1376x768 */
+    background:
+      linear-gradient(180deg, #1c1726 0%, rgba(28,23,38,.55) 14%, rgba(28,23,38,0) 30%) center bottom / var(--photo-w) var(--photo-h) no-repeat,
+      url("images/hero.jpg") center bottom / var(--photo-w) var(--photo-h) no-repeat,
+      linear-gradient(180deg, #14111f 0%, #1c1726 100%);
+    color: #fff; padding: 48px 0 0; text-align: center;
+  }
+  .hero .spacer { height: calc(var(--photo-h) * .74); }
+  .hero .wrap { position: relative; z-index: 2; }
+  .badge { display: inline-block; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 4px 14px; font-size: 14px; backdrop-filter: blur(4px); }
+  .hero h1 { font-size: clamp(38px, 9vw, 72px); margin: 18px 0 8px; text-shadow: 0 3px 18px rgba(0,0,0,.25); }
+  .hero .sub { font-size: clamp(18px, 3.4vw, 23px); opacity: .95; margin: 0 auto 22px; max-width: 600px; }
+  .hero .meta { font-weight: 500; margin-bottom: 26px; }
+  .countdown { display: inline-flex; gap: 10px; direction: rtl; flex-wrap: wrap; justify-content: center; }
+  .cd { background: rgba(20,15,30,.35); border-radius: 14px; padding: 10px 14px; min-width: 76px; }
+  .cd b { display: block; font-family: "Secular One", sans-serif; font-size: 30px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .cd span { font-size: 13px; opacity: .85; }
+  .cd-note { font-size: 14px; opacity: .85; margin-top: 10px; min-height: 1.4em; }
+  .dunes { display: block; width: 100%; height: 60px; margin-top: 0; }
+
+  /* Letter */
+  .letter { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px 24px; box-shadow: var(--shadow); }
+  .letter p { margin: 0 0 14px; }
+  .letter .sign { font-family: "Secular One", sans-serif; font-size: 20px; margin-top: 20px; }
+  .letter .ps { color: var(--ink-soft); font-size: 15px; margin: 0; }
+  .stamp { position: absolute; top: -14px; left: 18px; transform: rotate(-8deg); background: var(--accent); color: var(--accent-ink); font-weight: 700; font-size: 13px; padding: 6px 12px; border-radius: 8px; }
+
+  /* Facts */
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+  .fact { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+  .fact .ico { font-size: 26px; }
+  .fact h3 { font-size: 18px; margin: 6px 0 4px; }
+  .fact p { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.5; }
+
+  /* Timeline */
+  .day-tabs { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+  .tab { font: inherit; font-weight: 700; border: 2px solid var(--line); background: var(--surface); color: var(--ink); padding: 8px 18px; border-radius: 999px; cursor: pointer; }
+  .tab[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+  .timeline::before { content: ""; position: absolute; top: 8px; bottom: 8px; right: 21px; width: 3px; background: var(--line); border-radius: 3px; }
+  .tl { position: relative; padding: 0 58px 22px 0; }
+  .tl .dot { position: absolute; right: 4px; top: 0; width: 38px; height: 38px; border-radius: 50%; background: var(--surface); border: 3px solid var(--accent); display: grid; place-items: center; font-size: 18px; }
+  .tl .time { font-weight: 700; color: var(--accent); font-size: 15px; }
+  .tl h3 { font-size: 21px; margin: 2px 0 6px; }
+  .tl p { margin: 0 0 8px; }
+  .reality { background: var(--surface-2); border-radius: 12px; padding: 10px 14px; font-size: 15px; color: var(--ink-soft); }
+  .reality b { color: var(--ink); }
+  .day-panel[hidden] { display: none; }
+
+  /* Weather switch */
+  .weather { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .wopt { font: inherit; text-align: right; cursor: pointer; border: 2px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 14px; padding: 12px; }
+  .wopt[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+  .wopt b { display: block; font-size: 16px; }
+  .wopt span { font-size: 14px; color: var(--ink-soft); }
+  @media (max-width: 520px) { .weather { grid-template-columns: 1fr; } }
+
+  /* Food alert */
+  .alert { display: flex; gap: 16px; align-items: flex-start; background: var(--accent-soft); border: 2px dashed var(--accent); border-radius: 18px; padding: 20px; }
+  .alert .big { font-size: 40px; line-height: 1; }
+  .alert h3 { font-size: 22px; margin-bottom: 6px; }
+  .alert p { margin: 0 0 8px; }
+
+  /* Checklist */
+  .progress { height: 12px; background: var(--surface-2); border-radius: 999px; overflow: hidden; margin: 6px 0 4px; }
+  .progress > div { height: 100%; width: 0; background: var(--ok); transition: width .35s ease; }
+  .progress-text { font-weight: 700; margin-bottom: 14px; }
+  .checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .checklist label { display: flex; gap: 12px; align-items: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; cursor: pointer; transition: background .2s; }
+  .checklist input { width: 22px; height: 22px; accent-color: var(--ok); margin-top: 3px; flex: none; }
+  .checklist .t { font-weight: 500; }
+  .checklist .q { display: block; color: var(--ink-soft); font-size: 14px; }
+  .checklist input:checked + span .t { text-decoration: line-through; text-decoration-color: var(--ok); }
+  .checklist label:has(input:checked) { background: var(--ok-soft); }
+
+  /* FAQ */
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; margin-bottom: 8px; }
+  summary { cursor: pointer; padding: 14px 16px; font-weight: 700; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "＋"; color: var(--accent); margin-left: 10px; }
+  details[open] summary::before { content: "−"; }
+  details p { margin: 0; padding: 0 16px 16px; color: var(--ink-soft); }
+
+  /* Rescue */
+  .rescue { background: linear-gradient(135deg, var(--surface) 0%, var(--accent-soft) 100%); }
+  .levels { display: grid; gap: 10px; margin: 18px 0; }
+  .lvl { display: grid; grid-template-columns: 54px 1fr; gap: 12px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+  .lvl .n { font-family: "Secular One", sans-serif; font-size: 22px; text-align: center; border-radius: 12px; padding: 6px 0; color: #fff; }
+  .lvl p { margin: 0; font-size: 15px; }
+  .lvl b { display: block; font-size: 16px; }
+  .where { display: grid; gap: 6px; }
+  .where p { margin: 0; }
+  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font: inherit; font-weight: 700; text-decoration: none; border: 0; border-radius: 999px; padding: 10px 18px; cursor: pointer; background: var(--accent); color: var(--accent-ink); }
+  .btn.ghost { background: transparent; color: var(--ink); border: 2px solid var(--line); }
+  .panic { margin-top: 26px; text-align: center; }
+  .panic button { font: inherit; font-family: "Secular One", sans-serif; font-size: 22px; color: #fff; background: radial-gradient(circle at 40% 35%, #ff6b4a, #c42d14); border: 6px solid #f6c9b9; border-radius: 50%; width: 150px; height: 150px; cursor: pointer; box-shadow: 0 10px 0 #8d1f0e, 0 14px 30px rgba(0,0,0,.25); transition: transform .08s, box-shadow .08s; }
+  .panic button:active { transform: translateY(8px); box-shadow: 0 2px 0 #8d1f0e, 0 6px 14px rgba(0,0,0,.25); }
+  .panic-out { min-height: 3.2em; margin: 18px auto 0; max-width: 520px; font-weight: 500; }
+
+  footer { text-align: center; color: var(--ink-soft); padding: 56px 16px 40px; font-size: 15px; }
+  footer .big { font-family: "Secular One", sans-serif; font-size: 24px; color: var(--ink); }
+
+  .theme-toggle { position: fixed; bottom: 16px; left: 16px; z-index: 10; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-size: 20px; cursor: pointer; box-shadow: var(--shadow); }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="ניווט בעמוד">
+  <div class="wrap">
+    <a class="brand" href="#top">🏜️ טיול אבות וילדים</a>
+    <ul>
+      <li><a class="l" href="#letter">מכתב לנשים</a></li>
+      <li><a class="l" href="#facts">בקצרה</a></li>
+      <li><a class="l" href="#schedule">לו״ז</a></li>
+      <li><a class="l" href="#food">אוכל</a></li>
+      <li><a class="l" href="#packing">ציוד</a></li>
+      <li><a class="l" href="#faq">שאלות</a></li>
+    </ul>
+    <a class="l sos" href="#rescue">🚁 חילוץ</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="badge">חיבת ציון · חרב לאת · ועדת נוער</span>
+    <h1>אבות. ילדים. מדבר.<br>מה כבר יכול להשתבש?</h1>
+    <p class="sub">כל הפרטים על טיול האבות והילדים – מרוכזים במקום אחד. בשבילנו, ובעיקר בשבילכן, למקרה שתצטרכנה לחלץ אותנו.</p>
+    <div class="meta">שישי–שבת · 6–7 בנובמבר · ערד ← חאן מצדה ← ים המלח</div>
+    <div class="countdown" id="countdown" aria-live="polite">
+      <div class="cd"><b id="cd-d">–</b><span>ימים</span></div>
+      <div class="cd"><b id="cd-h">–</b><span>שעות</span></div>
+      <div class="cd"><b id="cd-m">–</b><span>דקות</span></div>
+      <div class="cd"><b id="cd-s">–</b><span>שניות</span></div>
+    </div>
+    <div class="cd-note" id="cd-note">עד היציאה מחיבת ציון (ועוד בערך 20 דקות עד שבאמת יוצאים)</div>
+  </div>
+  <div class="spacer" aria-hidden="true"></div>
+  <svg class="dunes" viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 85 C 200 50, 380 60, 560 85 S 900 110, 1200 70 L1200 110 L0 110Z" fill="var(--bg)"/>
+  </svg>
+</header>
+
+<main class="wrap">
+
+  <section id="letter">
+    <div class="letter">
+      <span class="stamp">דחוף · לעיון בנות הזוג</span>
+      <p><strong>לנשותינו היקרות,</strong></p>
+      <p>אנחנו יודעים מה אתן חושבות. ראיתן אותנו אורזים תיק לגן. ראיתן אותנו מחפשים את הגרב השנייה כשהיא ביד שלנו. ראיתן אותנו שואלים "איפה הכובע שלו?" כשהכובע על הראש שלו.</p>
+      <p>ובכל זאת, החלטנו לקחת את הילדים למדבר. ללילה שלם. לבד.</p>
+      <p>אז ריכזנו כאן את כל הפרטים: איפה נהיה, מתי, מה אמור לקרות ומה כנראה יקרה בפועל. לא כי אנחנו צריכים עזרה, חלילה. רק למקרה ש... נו, אתן יודעות.</p>
+      <p class="sign">באהבה ובביטחון עצמי מלא (טוב, 85%),<br>האבות של חלח״צ</p>
+      <p class="ps">נ.ב. אם הם חוזרים עם חול בכל מקום – זה סימן שהטיול הצליח.</p>
+    </div>
+  </section>
+
+  <section id="facts">
+    <div class="kicker">בקצרה, למי שאין זמן</div>
+    <h2>הפרטים החשובים</h2>
+    <div class="facts">
+      <div class="fact"><div class="ico">🚌</div><h3>יציאה</h3><p>שישי 6.11, בשעה 11:00 מחיבת ציון. אוטובוס ומיניבוס, וחלק מהמשפחות ברכבים פרטיים.</p></div>
+      <div class="fact"><div class="ico">⛺</div><h3>לינה</h3><p>חאן מצדה, באוהלים בדואיים גדולים. החאן מספק מזרנים, ורק מזרנים.</p></div>
+      <div class="fact"><div class="ico">🍽️</div><h3>ארוחה ראשונה שמוגשת</h3><p>ארוחת הערב בחאן ביום שישי. עד אז כל משפחה דואגת לעצמה.</p></div>
+      <div class="fact"><div class="ico">🌅</div><h3>זריחה במצדה</h3><p>השכמה ב־05:00 בשבת למי שרוצה. ממש לא חובה.</p></div>
+      <div class="fact"><div class="ico">🏠</div><h3>חזרה</h3><p>שבת, דרך ירושלים. הגעה לחיבת ציון בצהריים המאוחרים / אחר הצהריים.</p></div>
+    </div>
+  </section>
+
+  <section id="schedule">
+    <div class="kicker">לו״ז</div>
+    <h2>התוכנית (והמציאות)</h2>
+    <p class="lead">לכל סעיף צירפנו הערכה ריאלית ממומחים. המומחים זה אנחנו.</p>
+
+    <div class="day-tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="day-fri" id="tab-fri">יום שישי 6.11</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="day-sat" id="tab-sat">יום שבת 7.11</button>
+    </div>
+
+    <div class="day-panel" id="day-fri" role="tabpanel" aria-labelledby="tab-fri">
+      <ol class="timeline">
+        <li class="tl"><span class="dot">🚌</span>
+          <div class="time">11:00</div>
+          <h3>יוצאים מחיבת ציון</h3>
+          <p>אוטובוס ומיניבוס, וחלק מהמשפחות ברכבים פרטיים. בהנחה שלא תהיה מלחמה עד אז.</p>
+          <div class="reality"><b>במציאות:</b> 11:20, אחרי שמישהו חזר הביתה להביא את הבובה. ומישהו אחר חזר לבדוק אם סגר את הגז.</div>
+        </li>
+        <li class="tl"><span class="dot">🏜️</span>
+          <div class="time">בדרך</div>
+          <h3>עצירה באזור ערד</h3>
+          <p>נכיר קצת את המדבר, נסתובב ונטייל.</p>
+          <div class="reality"><b>במציאות:</b> "אבא, כמה עוד?" × 47. כל החטיפים שתוכננו ליום שלם נגמרים לפני שמגיעים לערד.</div>
+        </li>
+        <li class="tl"><span class="dot">⛺</span>
+          <div class="time">אחר הצהריים</div>
+          <h3>מגיעים לחאן מצדה ומתמקמים</h3>
+          <p>אוהלים בדואיים גדולים. מתמקמים, מדליקים מדורות, ויש משחקים ופעילויות היכרות לילדים שמאורגנים מראש. באמת מאורגנים מראש, לא מאולתרים.</p>
+          <div class="reality"><b>במציאות:</b> ויכוח מקצועי וממושך בין שלושה אבות על הדרך הנכונה לסדר את העצים במדורה.</div>
+        </li>
+        <li class="tl"><span class="dot">🍲</span>
+          <div class="time">ערב</div>
+          <h3>ארוחת ערב משותפת</h3>
+          <p>הארוחה הראשונה שמוגשת לנו. אוכלים יחד, יושבים סביב המדורות ומשחקים קצת.</p>
+          <div class="reality"><b>במציאות:</b> הילדים אוכלים רק לחם. האבות אוכלים בשביל שניים, כי "צריך כוח למחר".</div>
+        </li>
+        <li class="tl"><span class="dot">😴</span>
+          <div class="time">לילה</div>
+          <h3>משכיבים את הילדים לישון</h3>
+          <p>בלשון ההודעה המקורית: "ובתקווה גם נצליח להשכיב את הילדים לישון".</p>
+          <div class="reality"><b>במציאות:</b> "בתקווה" עושה כאן הרבה עבודה. הילדים נרדמים ב־23:30, האבות ב־21:45 באמצע סיפור.</div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="day-panel" id="day-sat" role="tabpanel" aria-labelledby="tab-sat" hidden>
+      <ol class="timeline">
+        <li class="tl"><span class="dot">⏰</span>
+          <div class="time">05:00</div>
+          <h3>השכמה, למי שרוצה</h3>
+          <p>ממש לא חובה! מי שמעדיף להמשיך לישון מוזמן למצוא פינה חשוכה באוהל, ואנחנו נעשה כמיטב יכולתנו לא להעיר אותו.</p>
+          <div class="reality"><b>במציאות:</b> הילדים ערים ב־04:50 וקופצים עלינו. "כמיטב יכולתנו" זו לא הבטחה.</div>
+        </li>
+        <li class="tl"><span class="dot">🔦</span>
+          <div class="time">עוד בחושך</div>
+          <h3>עולים למצדה בשביל הסוללה הרומית</h3>
+          <p>מסלול קצר וקל יחסית שמתאים גם לילדים. ככה לפחות אומרים ברשות הטבע והגנים, וככה זוכר המארגן מלפני 15 שנה. מתחילים ללכת בחושך, אז צריך פנסים וביגוד חם. בכל זאת, נובמבר במדבר.</p>
+          <div class="reality"><b>במציאות:</b> לפני 15 שנה הוא לא סחב ילד בן 4 על הכתפיים. "קל יחסית" – יחסית למה, לא פורט.</div>
+        </li>
+        <li class="tl"><span class="dot">🌅</span>
+          <div class="time">זריחה</div>
+          <h3>זריחה ממצדה</h3>
+          <p>בשביל הרגע הזה קמנו. השמש עולה מעל ים המלח והרי מואב.</p>
+          <div class="reality"><b>במציאות:</b> אחלה רגע. 400 תמונות, 3 טובות, ובכולן מישהו עם האצבע על העדשה.</div>
+        </li>
+        <li class="tl"><span class="dot">🥣</span>
+          <div class="time">בוקר</div>
+          <h3>יורדים לחאן לארוחת בוקר משותפת</h3>
+          <p>אחרי קצת הסתובבות במצדה. אחרי האוכל: התארגנות, ועולים על האוטובוסים והרכבים.</p>
+          <div class="reality"><b>במציאות:</b> ההתארגנות כוללת חיפוש של 25 דקות אחרי נעל אחת. היא תימצא בתוך שק השינה.</div>
+        </li>
+        <li class="tl"><span class="dot">🌊</span>
+          <div class="time">לפני הצהריים</div>
+          <h3>ממשיכים לים המלח</h3>
+          <p>בוחרים מסלול לפי מזג האוויר. לחצו לראות מה להביא לכל אפשרות:</p>
+          <div class="weather" role="group" aria-label="אפשרויות לפי מזג האוויר">
+            <button class="wopt" aria-pressed="true" data-w="warm"><b>☀️ חמים ונעים</b><span>מסלול עין בוקק</span></button>
+            <button class="wopt" aria-pressed="false" data-w="cool"><b>🥶 קריר</b><span>המעיינות החמים של עין גדי</span></button>
+          </div>
+          <div class="reality" id="weather-out" style="margin-top:10px"></div>
+        </li>
+        <li class="tl"><span class="dot">🏠</span>
+          <div class="time">צהריים מאוחרים / אחר הצהריים</div>
+          <h3>חוזרים הביתה דרך ירושלים</h3>
+          <p>הגעה צפויה לחיבת ציון בשעות הצהריים המאוחרות או אחר הצהריים.</p>
+          <div class="reality"><b>במציאות:</b> כל הילדים נרדמים באוטובוס, מכוסים בחול ובמלח. אתן מקבלות אותם בחזרה כמו שהם, בלי תעודת אחריות.</div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="food">
+    <div class="alert">
+      <div class="big">🥪</div>
+      <div>
+        <h3>חשוב! עד ארוחת הערב בשישי אין אוכל מסודר</h3>
+        <p>ארוחת הערב בחאן היא הארוחה הראשונה שמוגשת לנו. עד אז כל משפחה דואגת לעצמה: סנדוויצ׳ים, חטיפים, ירקות, פירות וכל מה שצריך לילדים ולמבוגרים לאורך היום.</p>
+        <p style="margin:0">טיפ מקצועי: לארוז כמות כפולה. וחשוב מזה, לבדוק שהשקית באמת עלתה לאוטובוס ולא נשארה על השיש.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="packing">
+    <div class="kicker">רשימת ציוד</div>
+    <h2>מה להביא?</h2>
+    <p class="lead">רשימה אינטראקטיבית: מסמנים מה כבר ארוז, והיא זוכרת (בדפדפן הזה). מומלץ שבת הזוג תעבור עליה שוב. סתם. אבל כן.</p>
+    <div class="card">
+      <div class="progress" aria-hidden="true"><div id="bar"></div></div>
+      <div class="progress-text" id="progress-text"></div>
+      <ul class="checklist" id="checklist">
+        <li><label><input type="checkbox" data-k="bedding"><span><span class="t">מצעים, שמיכות וכל מה שצריך לשינה</span><span class="q">החאן מספק מזרנים. רק מזרנים. כרית היא לא מותרות.</span></span></label></li>
+        <li><label><input type="checkbox" data-k="warm"><span><span class="t">ביגוד חם לילדים ולמבוגרים</span><span class="q">נובמבר במדבר. לא, חולצה עם שרוול קצר ועוד חולצה עם שרוול קצר זה לא "שכבות".</span></span></label></li>
+        <li><label><input type="checkbox" data-k="flashlight"><span><span class="t">פנסי ראש או פנסים רגילים</span><span class="q">עם סוללות. טעונות. כן, לבדוק עכשיו.</span></span></label></li>
+        <li><label><input type="checkbox" data-k="swim"><span><span class="t">בגדי ים, מגבות, וסנדלים או נעליים למים</span><span class="q">לשני המסלולים בים המלח. מגבת אחת לכל ילד, לא אחת לכל ההסעה.</span></span></label></li>
+        <li><label><input type="checkbox" data-k="food"><span><span class="t">סנדוויצ׳ים, פירות, ירקות וחטיפים ליום שישי</span><span class="q">ראו סעיף "לבדוק שהשקית עלתה לאוטובוס".</span></span></label></li>
+        <li><label><input type="checkbox" data-k="water"><span><span class="t">מים</span><span class="q">בחאן יש נקודות מסודרות למילוי. בקבוק ריק עדיף על בקבוק שנשכח.</span></span></label></li>
+        <li><label><input type="checkbox" data-k="mood"><span><span class="t">מצב רוח טוב!</span><span class="q">את זה דווקא יש לנו בשפע. זה הסעיף היחיד שאנחנו בטוחים בו.</span></span></label></li>
+      </ul>
+      <div class="btn-row"><button class="btn ghost" id="reset-list" type="button">איפוס הרשימה</button></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="kicker">שאלות ותשובות</div>
+    <h2>שאלות שאתן בטח שואלות</h2>
+    <details><summary>חייבים לקום ב־05:00?</summary><p>ממש לא חובה. מי שרוצה להמשיך לישון מוצא פינה חשוכה באוהל, והשאר ישתדלו לא להעיר אותו. אנחנו מציינים שוב את המילה "ישתדלו".</p></details>
+    <details><summary>הסוללה הרומית באמת מתאימה לילדים?</summary><p>לפי רשות הטבע והגנים: מסלול קצר וקל יחסית שמתאים גם לילדים. לפי זיכרון המארגן מלפני 15 שנה: גם. שני מקורות בלתי תלויים, כמעט.</p></details>
+    <details><summary>מי מחליט אם הולכים לעין בוקק או לעין גדי?</summary><p>מזג האוויר. לא האבות. ככה עדיף לכולם. אם חמים: עין בוקק והליכה במים. אם קריר: המעיינות החמים של עין גדי. בשני המקרים צריך בגדי ים ומגבות.</p></details>
+    <details><summary>מה עם אוכל בדרך?</summary><p>אין אוכל מסודר עד ארוחת הערב בחאן בשישי. כל משפחה מביאה לעצמה. אחר כך יש שתי ארוחות משותפות: ארוחת הערב בשישי וארוחת הבוקר בשבת.</p></details>
+    <details><summary>ומה אם המצב הביטחוני ישתנה?</summary><p>ההודעה המקורית יוצאת מהנחה שלא תהיה מלחמה עד אז. אם המצב ישתנה, נעדכן בקבוצה.</p></details>
+    <details><summary>מתי הם חוזרים?</summary><p>בשבת, דרך ירושלים. הגעה לחיבת ציון בצהריים המאוחרים או אחר הצהריים. מומלץ להכין מקלחת. ועוד מקלחת.</p></details>
+  </section>
+
+  <section id="rescue">
+    <div class="card rescue">
+      <div class="kicker">למקרה הצורך</div>
+      <h2>🚁 פרוטוקול חילוץ</h2>
+      <p class="lead" style="margin-bottom:0">מדרג רשמי לאירועים בשטח, ומה עושים בכל רמה.</p>
+      <div class="levels">
+        <div class="lvl"><div class="n" style="background:#3f8a5a">1</div><p><b>"אבא, איפה הכובע שלי?"</b>הכובע על הראש. מטופל בשטח, אין צורך בהתערבות.</p></div>
+        <div class="lvl"><div class="n" style="background:#8a9a3f">2</div><p><b>נגמרו החטיפים לפני ערד</b>לא דורש חילוץ. דורש תכנון. בפעם הבאה ארזו כפול.</p></div>
+        <div class="lvl"><div class="n" style="background:#c9a227">3</div><p><b>הילד לא נרדם, השעה 23:30</b>מטופל במדורה, סיפור ומבט מבין של אבא אחר שגם הוא שם.</p></div>
+        <div class="lvl"><div class="n" style="background:#d9622b">4</div><p><b>אבא שואל בקבוצה "מישהו יודע איך מקפלים את זה בחזרה?"</b>מטופל על ידי 30 אבות אחרים שכל אחד בטוח שהוא יודע.</p></div>
+        <div class="lvl"><div class="n" style="background:#b4241c">5</div><p><b>באמת צריך אתכן</b>הכול כתוב למטה. נשימה עמוקה. אנחנו בסדר. בערך.</p></div>
+      </div>
+      <div class="where">
+        <p><strong>📍 איפה נהיה בלילה:</strong> חאן מצדה, בצד המערבי של מצדה (מגיעים דרך ערד), ליד שביל הסוללה הרומית.</p>
+        <p><strong>🗓️ מתי:</strong> משישי 6.11 אחר הצהריים ועד שבת בבוקר. אחרי זה: ים המלח (עין בוקק או עין גדי), ומשם הביתה דרך ירושלים.</p>
+        <p><strong>💬 עדכונים:</strong> בקבוצת הוואטסאפ של חלח״צ.</p>
+        <p><strong>👨‍👧‍👦 גיבוי:</strong> בחאן יהיו עוד הרבה אבות שיודעים מה הם עושים. סטטיסטית, לפחות אחד.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn" href="https://waze.com/ul?q=%D7%97%D7%90%D7%9F%20%D7%9E%D7%A6%D7%93%D7%94&navigate=yes" target="_blank" rel="noopener">🚗 ניווט לחאן מצדה ב־Waze</a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=%D7%97%D7%90%D7%9F+%D7%9E%D7%A6%D7%93%D7%94" target="_blank" rel="noopener">🗺️ במפות Google</a>
+      </div>
+      <div class="panic">
+        <button type="button" id="panic">כפתור<br>פאניקה</button>
+        <div class="panic-out" id="panic-out" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="big">מחכה לנו אחלה טיול 🔥</div>
+  <p>הרבה ילדים, מדבר, מדורות, זריחה, ובעיקר זמן איכות ביחד.</p>
+  <p>חיבת ציון / חרב לאת</p>
+</footer>
+
+<button class="theme-toggle" id="theme-toggle" type="button" aria-label="החלפת מצב תצוגה">🌓</button>
+
+<script>
+(function () {
+  // Countdown to departure (Israel time, after the switch to winter time)
+  var departure = new Date("2026-11-06T11:00:00+02:00").getTime();
+  var returnBy = new Date("2026-11-07T18:00:00+02:00").getTime();
+  var els = { d: document.getElementById("cd-d"), h: document.getElementById("cd-h"), m: document.getElementById("cd-m"), s: document.getElementById("cd-s") };
+  var note = document.getElementById("cd-note");
+  function tick() {
+    var now = Date.now(), diff = departure - now;
+    if (diff <= 0) {
+      els.d.textContent = els.h.textContent = els.m.textContent = els.s.textContent = "0";
+      note.textContent = now < returnBy ? "יצאנו! אנחנו בסדר. כנראה." : "חזרנו. כולם. כמעט בטוח שכולם.";
+      return;
+    }
+    var s = Math.floor(diff / 1000);
+    els.d.textContent = Math.floor(s / 86400);
+    els.h.textContent = Math.floor(s % 86400 / 3600);
+    els.m.textContent = Math.floor(s % 3600 / 60);
+    els.s.textContent = s % 60;
+  }
+  tick(); setInterval(tick, 1000);
+
+  // Day tabs
+  var tabs = document.querySelectorAll(".tab");
+  tabs.forEach(function (t) {
+    t.addEventListener("click", function () {
+      tabs.forEach(function (o) {
+        var on = o === t;
+        o.setAttribute("aria-selected", on);
+        document.getElementById(o.getAttribute("aria-controls")).hidden = !on;
+      });
+    });
+  });
+
+  // Weather options
+  var weatherText = {
+    warm: "<b>☀️ עין בוקק:</b> מסלול שכולל הליכה במים. להביא סנדלים או נעליים שאפשר להרטיב, ובגדי ים לילדים. <b>במציאות:</b> אבא אחד ייכנס עם נעלי ספורט \"כי זה רק קצת מים\".",
+    cool: "<b>🥶 עין גדי:</b> אזור המעיינות החמים. גם כאן כדאי להביא בגדי ים ומגבות. <b>במציאות:</b> הילדים ייצאו מהמים רק אחרי האיום השלישי."
+  };
+  var wout = document.getElementById("weather-out");
+  var wopts = document.querySelectorAll(".wopt");
+  function setWeather(k) {
+    wopts.forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.w === k); });
+    wout.innerHTML = weatherText[k];
+  }
+  wopts.forEach(function (b) { b.addEventListener("click", function () { setWeather(b.dataset.w); }); });
+  setWeather("warm");
+
+  // Packing checklist, remembered per browser
+  var KEY = "halhatz-tiul-packing";
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+  var boxes = document.querySelectorAll("#checklist input");
+  var bar = document.getElementById("bar"), ptext = document.getElementById("progress-text");
+  var msgs = [
+    "עוד לא התחלנו לארוז. יש זמן. (אין זמן.)",
+    "התחלה מבטיחה. כנראה שזה המצב רוח הטוב.",
+    "חצי הדרך! מכאן זה רק בירידה. כמו בסוללה הרומית.",
+    "כמעט! עוד קצת ואפשר לשלוח צילום מסך לבת הזוג.",
+    "הכול ארוז! 🎉 עכשיו רק לוודא שהתיק עלה לאוטו."
+  ];
+  function update() {
+    var done = 0;
+    boxes.forEach(function (b) { if (b.checked) done++; });
+    var pct = done / boxes.length;
+    bar.style.width = (pct * 100) + "%";
+    var i = done === 0 ? 0 : done === boxes.length ? 4 : pct < .5 ? 1 : pct < .8 ? 2 : 3;
+    ptext.textContent = done + " מתוך " + boxes.length + " · " + msgs[i];
+  }
+  boxes.forEach(function (b) {
+    b.checked = !!saved[b.dataset.k];
+    b.addEventListener("change", function () {
+      saved[b.dataset.k] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+      update();
+    });
+  });
+  document.getElementById("reset-list").addEventListener("click", function () {
+    saved = {};
+    boxes.forEach(function (b) { b.checked = false; });
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    update();
+  });
+  update();
+
+  // Panic button
+  var panicMsgs = [
+    "נשימה עמוקה. הוא כנראה בסדר. הילדים בטוח בסדר.",
+    "בדקנו: הילדים שמחים, מלוכלכים ועייפים. בדיוק לפי התוכנית.",
+    "אם הוא לא עונה – זה כי אין קליטה במדבר. או כי הוא נרדם ראשון באוהל.",
+    "תזכורת: יש שם עוד הרבה אבות. מישהו מהם בטח זוכר איפה המגבות.",
+    "עדכון מהשטח: מישהו שכח פנס. מישהו אחר הביא שלושה. המערכת מאזנת את עצמה.",
+    "מצב החטיפים: אפס. מצב החוויות: מלא. מצב הכביסה שתחכה לכן: לא נדבר על זה.",
+    "אם זה באמת דחוף – יש למעלה ניווט לחאן מצדה. אבל הכול בסדר. באמת. כמעט."
+  ];
+  var pi = 0, pout = document.getElementById("panic-out");
+  document.getElementById("panic").addEventListener("click", function () {
+    pout.textContent = panicMsgs[pi % panicMsgs.length];
+    pi++;
+  });
+
+  // Highlight the nav link of the section in view
+  var navLinks = document.querySelectorAll(".nav a.l");
+  var byId = {};
+  navLinks.forEach(function (a) { byId[a.getAttribute("href").slice(1)] = a; });
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        navLinks.forEach(function (a) { a.classList.remove("active"); });
+        var a = byId[e.target.id];
+        if (a) { a.classList.add("active"); a.scrollIntoView({ block: "nearest", inline: "nearest" }); }
+      });
+    }, { rootMargin: "-40% 0px -55% 0px" });
+    document.querySelectorAll("main section[id]").forEach(function (sec) { io.observe(sec); });
+  }
+
+  // Theme toggle
+  var root = document.documentElement;
+  try { var th = localStorage.getItem("halhatz-theme"); if (th) root.dataset.theme = th; } catch (e) {}
+  document.getElementById("theme-toggle").addEventListener("click", function () {
+    var isDark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = isDark ? "light" : "dark";
+    try { localStorage.setItem("halhatz-theme", root.dataset.theme); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>
